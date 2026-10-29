@@ -1,10 +1,11 @@
-ATUALIZAÇÃO DEFINITIVA — 29/10/2026
+MP Planejados - iPhone Compartilhamento
 
-No GitHub, substitua o arquivo index.html na raiz do repositório pelo deste ZIP. Atualize também a imagem em img/logo-mp.svg caso não exista.
+Substitua o index.html na raiz do repositorio GitHub e mantenha a pasta img/logo-mp.svg.
 
-Não é necessário enviar script.js ou style.css: o cálculo e os estilos estão no index.html para evitar versões antigas em cache.
+Na aba Gerar PDF: toque em Preparar proposta e depois em Compartilhar PDF no iPhone. O menu nativo do iOS permite WhatsApp, Arquivos, etc. O botao Baixar PDF e alternativa.
 
-Teste: Branco / Altura 1000 / Largura 1000 / Calcular valor = R$ 1.260,00.
-Amadeirado = R$ 1.470,00; Ripado = R$ 1.260,00; Provençal = R$ 1.911,00.
+O PDF nao tem cabecalho/rodape do Safari pois e gerado diretamente; data dentro da proposta permanece.
 
-O PDF continua usando bibliotecas externas e precisa de conexão à internet.
+Tabelas: Branco 1260, Amadeirado 1470, Ripado 1260, Provencal 1911 por m2.
+
+O recurso Compartilhar arquivos depende de Safari e HTTPS; GitHub Pages possui HTTPS.
