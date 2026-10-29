@@ -1,11 +1,4 @@
-MP Planejados - iPhone Compartilhamento
-
-Substitua o index.html na raiz do repositorio GitHub e mantenha a pasta img/logo-mp.svg.
-
-Na aba Gerar PDF: toque em Preparar proposta e depois em Compartilhar PDF no iPhone. O menu nativo do iOS permite WhatsApp, Arquivos, etc. O botao Baixar PDF e alternativa.
-
-O PDF nao tem cabecalho/rodape do Safari pois e gerado diretamente; data dentro da proposta permanece.
-
-Tabelas: Branco 1260, Amadeirado 1470, Ripado 1260, Provencal 1911 por m2.
-
-O recurso Compartilhar arquivos depende de Safari e HTTPS; GitHub Pages possui HTTPS.
+MP Planejados — correção de fontes ampliadas no Safari iPhone.
+Substitua o index.html na raiz do GitHub e mantenha a pasta img.
+Mantém o mesmo fluxo Preparar > Compartilhar e os preços com reajuste de 5%.
+Ajustes: bloqueio de autoampliação de texto iOS na exportação PDF e detecção automática de telefones.
