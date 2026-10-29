@@ -11,7 +11,7 @@
 <div class="two"><label>Prazo de execução (dias úteis)<input id="prazo" type="number" min="1" max="9999" step="1" value="90" required></label><label>Valor à vista (R$)<input id="avista" inputmode="decimal" placeholder="Ex.: 15.980,00" required></label></div>
 <div class="resultbox"><span>VALORES CALCULADOS AUTOMATICAMENTE</span><div class="pricepair"><div><small>À vista</small><strong id="mostraAvista">R$ 0,00</strong></div><div><small>A prazo (+15%)</small><strong id="mostraPrazo">R$ 0,00</strong></div></div><div class="installment">Cartão em 12x: <b id="mostraParcelas">R$ 0,00</b></div></div>
 <p class="hint">O PDF mantém o desconto anunciado de 13%, as condições de pagamento, os dados bancários e os contatos. A data é a de hoje e a validade é de 7 dias.</p>
-<button class="primary" type="submit">Gerar proposta em PDF</button></form></section>
+<button class="primary" type="submit" id="btnGerarPdf">Gerar proposta em PDF</button><p class="hint" id="pdfStatus" role="status" aria-live="polite">O arquivo será salvo com o nome do cliente e do projeto.</p></form></section>
 </main><footer>MP Planejados · Ferramentas de uso interno</footer></div>
 <div id="printArea" class="printArea">
 <div class="print-top"><div class="print-proposta"><div class="proposal-title">PROPOSTA</div><div class="proposal-date"><span>Data</span><span id="docData"></span></div><div class="proposal-date"><span>Válido até</span><span id="docValidade"></span></div></div><img class="print-logo" src="img/logo-mp.svg" alt="MP Planejados"></div>
@@ -28,4 +28,6 @@
 <div class="contact-head"><span>Contato com a empresa</span><span>Observação</span></div><div class="contact-grid"><div>Atendente</div><div>Silvana Aparecida Brandão</div><div></div><div>Telefone celular</div><div>(19) 9 7410-2728</div><div></div><div>WhatsApp</div><div>(19) 9 7410-2728</div><div></div><div>e-mail</div><div>marcelohgonzaga@yahoo.com.br</div><div></div><div>Instagram</div><div>mp.planejados</div><div></div></div>
 <div class="document-footer">MP Planejados<br>Rua Décio Bueno, 56, Vila Santa Júlia<br>Mogi Guaçu - SP<br><strong>"Glória a Deus"</strong></div>
 </div>
-<script src="script.js"></script></body></html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="script.js" defer></script></body></html>

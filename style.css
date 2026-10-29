@@ -22,3 +22,48 @@ html,body{margin:0!important;padding:0!important;background:#fff!important;color
   .print-top,.customer-grid,.description-head,.delivery-head,.delivery-note,.payment-title,.payment-labels,.payment-row,.payment-divider,.payment-condition,.small-heading,.bank-table,.contact-head,.contact-grid,.document-footer {break-inside:avoid;page-break-inside:avoid;}
   .description-text {break-inside:avoid;page-break-inside:avoid;}
 }
+
+
+/* Estilos idênticos ao impresso, usados para exportação direta sem cabeçalho do navegador. */
+#printArea.pdf-export{display:block!important;position:fixed!important;left:0!important;top:0!important;z-index:-1!important;width:196mm!important;max-width:none!important;padding:0!important;margin:0!important;background:#fff!important;font:8.8pt/1.16 Arial,Helvetica,sans-serif!important;color:#111!important;box-sizing:border-box!important}
+#printArea.pdf-export,#printArea.pdf-export *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#printArea.pdf-export .print-top{height:20mm;display:flex;justify-content:space-between;gap:20px}
+#printArea.pdf-export .print-proposta{width:57%}
+#printArea.pdf-export .proposal-title{background:#868686;color:#fff;font-size:15pt;font-weight:bold;padding:2px 5px}
+#printArea.pdf-export .proposal-date{display:grid;grid-template-columns:61% 39%;border-bottom:1px solid #555;padding:1px 2px}
+#printArea.pdf-export .print-logo{width:30mm;height:19mm;object-fit:contain;margin-right:8mm}
+#printArea.pdf-export .customer-grid{display:grid;grid-template-columns:25% 75%;margin-top:0}
+#printArea.pdf-export .customer-grid>div{min-height:4.1mm;padding:1px 3px;background:#f0f0f0;border:1px solid #fff;overflow-wrap:anywhere}
+#printArea.pdf-export .customer-grid>.key{font-weight:bold;background:#d0d0d0}
+#printArea.pdf-export .description-head{background:#d0d0d0;text-align:center;font-weight:bold;padding:2px;margin-top:2px}
+#printArea.pdf-export .description-text{background:#efefef;white-space:pre-wrap;overflow-wrap:anywhere;min-height:19mm;padding:4px 3px;line-height:1.45}
+#printArea.pdf-export .delivery-head{background:#ababab;text-align:center;font-weight:bold;margin-top:3px;min-height:5mm;padding:2px}
+#printArea.pdf-export .delivery-head b{margin-left:15px}
+#printArea.pdf-export .delivery-note{color:#e5232a;background:#eee;font-weight:bold;text-align:center;padding:2px 0;font-size:10pt}
+#printArea.pdf-export .payment-title{background:#bcbcbc;text-align:center;font-weight:bold;margin-top:2.5mm;padding:3px}
+#printArea.pdf-export .payment-labels{display:grid;grid-template-columns:56% 44%;background:#acacac;text-align:center;font-weight:bold}
+#printArea.pdf-export .payment-labels>div{border:1px solid #fff;padding:2px}
+#printArea.pdf-export .payment-row{display:grid;grid-template-columns:56% 44%;min-height:10mm;background:#efefef}
+#printArea.pdf-export .payment-row>div{border:1px solid #fff;padding:4px;display:flex;align-items:center;justify-content:center;text-align:center}
+#printArea.pdf-export .payment-price{font-weight:bold;font-size:18pt;letter-spacing:-.02em}
+#printArea.pdf-export .payment-split{display:grid!important;grid-template-columns:30% 70%;padding:0!important}
+#printArea.pdf-export .payment-split>b,#printArea.pdf-export .payment-split>strong{display:flex;align-items:center;justify-content:center;border-right:1px solid #fff;padding:2px}
+#printArea.pdf-export .payment-split>b{font-size:12pt}
+#printArea.pdf-export .payment-split>strong{font-size:17pt;letter-spacing:-.03em}
+#printArea.pdf-export .green{color:#04ad4e}
+#printArea.pdf-export .payment-row:nth-of-type(3){min-height:11mm}
+#printArea.pdf-export .payment-divider{height:3mm;background:#c4c4c4;border-top:1px solid white}
+#printArea.pdf-export .payment-condition{text-align:center;background:#d1d1d1;padding:3px 2px}
+#printArea.pdf-export .payment-condition-2{text-align:left;background:#e1e1e1}
+#printArea.pdf-export .small-heading{margin-top:2.5mm;background:#d0d0d0;text-align:center;font-weight:bold;padding:3px}
+#printArea.pdf-export .bank-header,#printArea.pdf-export .bank-row{display:grid;grid-template-columns:25% 20% 12% 7% 9% 27%}
+#printArea.pdf-export .bank-header span{background:#aaa;font-weight:bold;border:1px solid #fff;padding:2px 1px;white-space:nowrap;font-size:8.2pt}
+#printArea.pdf-export .bank-row span{background:#eee;border:1px solid #fff;padding:2px 1px;white-space:nowrap;font-size:8.1pt}
+#printArea.pdf-export .bank-pix{display:grid;grid-template-columns:25% 75%}
+#printArea.pdf-export .bank-pix span{background:#eee;border:1px solid #fff;padding:2px}
+#printArea.pdf-export .contact-head{display:grid;grid-template-columns:56% 44%;gap:1px;margin-top:2.5mm}
+#printArea.pdf-export .contact-head span{background:#aaa;color:#111;text-align:center;font-weight:bold;padding:2px}
+#printArea.pdf-export .contact-grid{display:grid;grid-template-columns:25% 31% 44%}
+#printArea.pdf-export .contact-grid>div{background:#eee;border:1px solid #fff;padding:1px 2px;min-height:4.1mm}
+#printArea.pdf-export .document-footer{text-align:center;color:#888;margin-top:2mm;break-inside:avoid;page-break-inside:avoid;line-height:1.55}
+#printArea.pdf-export .document-footer strong{display:block;color:#727272;font-size:11pt}
