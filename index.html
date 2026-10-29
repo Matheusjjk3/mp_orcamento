@@ -89,6 +89,8 @@ html,body{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 #printArea.pdf-export .bank-header span{font-size:8.2pt!important;}
 #printArea.pdf-export .bank-row span{font-size:8.1pt!important;}
 #printArea.pdf-export .payment-price{font-size:18pt!important;}
+/* Prioridade acima da regra geral das células para manter o total em destaque no PDF do iPhone. */
+#printArea.pdf-export .payment-row > #docPrazoTotal{font-size:18pt!important;font-weight:700!important;line-height:1.12!important;letter-spacing:-.02em!important;}
 #printArea.pdf-export .payment-split>b{font-size:12pt!important;}
 #printArea.pdf-export .payment-split>strong{font-size:17pt!important;}
 #printArea.pdf-export .delivery-note{font-size:10pt!important;}
