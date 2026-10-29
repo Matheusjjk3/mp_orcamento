@@ -1,0 +1,7 @@
+MP Planejados — versão de orçamento conforme modelo fornecido
+
+Abra index.html no navegador ou publique todos os arquivos em uma hospedagem estática.
+A aba Gerar PDF monta o modelo com o mesmo conteúdo e visual do exemplo. No celular, use a opção Imprimir > Salvar como PDF.
+O valor a prazo é o valor à vista +15%. O desconto efetivo de retorno é 13,0435%, arredondado na proposta para 13%.
+A parcela de 12x é arredondada a centavos; valores que não dividem exatamente por 12 precisam de ajuste na última parcela em cobranças reais.
+Endereço atualizado conforme solicitado.
