@@ -67,3 +67,6 @@ html,body{margin:0!important;padding:0!important;background:#fff!important;color
 #printArea.pdf-export .contact-grid>div{background:#eee;border:1px solid #fff;padding:1px 2px;min-height:4.1mm}
 #printArea.pdf-export .document-footer{text-align:center;color:#888;margin-top:2mm;break-inside:avoid;page-break-inside:avoid;line-height:1.55}
 #printArea.pdf-export .document-footer strong{display:block;color:#727272;font-size:11pt}
+
+/* Preços atualizados visíveis para facilitar conferência no celular */
+.price-reference{font-size:.82rem!important;line-height:1.65!important;color:#34574d!important;background:#eaf4ed;border-radius:10px;padding:10px 12px;margin-top:10px!important;font-weight:600}

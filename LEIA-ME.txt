@@ -1,1 +1,14 @@
-MP Planejados — geração direta de PDF (uma folha A4)\n\nNo GitHub, envie index.html, style.css, script.js e a pasta img.\n\nO PDF é baixado automaticamente no formato Nome (Projeto).pdf, sem URL nem data/hora do navegador.\n\nÉ necessária conexão à internet para carregar as bibliotecas html2canvas e jsPDF via CDN.\n\nSe o celular abrir uma prévia, use Compartilhar ou Salvar em Arquivos; a maneira exata varia conforme Android/iPhone e navegador.\n
+MP Planejados — atualização verificada de 5% nos valores por m².
+
+Valores: Branco 1260 | Amadeirado 1470 | Ripado 1260 | Provençal 1911.
+
+PUBLICAÇÃO NO GITHUB PAGES:
+1. Extraia este ZIP.
+2. Abra seu repositório no GitHub, entre na pasta raiz (a mesma onde está o index.html atual).
+3. Envie TODOS os arquivos extraídos: index.html, script.js, style.css e a pasta img com logo-mp.svg.
+4. Confirme o commit e aguarde a publicação do GitHub Pages.
+5. Abra o site e confira a frase: Valores atualizados +5% (29/10/2026).
+
+IMPORTANTE: nunca envie só o arquivo ZIP como substituto dos arquivos do site.
+O index.html agora usa parâmetros de versão nos arquivos CSS e JS para contornar cache antigo.
+Os cálculos de PDF, banco e outras funcionalidades foram preservados.

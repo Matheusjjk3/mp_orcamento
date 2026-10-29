@@ -1,6 +1,6 @@
 "use strict";
 const $=id=>document.getElementById(id);const currency=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n);
-const rates={branco:1200,amadeirado:1400,ripado:1200,provencal:1820};let lastFurnitureValue=null;
+const rates={branco:1260,amadeirado:1470,ripado:1260,provencal:1911};let lastFurnitureValue=null;
 function openTab(id){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));}
 document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>openTab(b.dataset.tab)));
 $('formMoveis').addEventListener('submit',event=>{event.preventDefault();const h=Number($('altura').value),w=Number($('largura').value);if(!(h>0&&w>0))return;const value=h*w*rates[$('material').value]/1000000;lastFurnitureValue=value;$('resultadoMoveis').innerHTML=`<span>VALOR ESTIMADO</span><strong>${currency(value)}</strong><small>Medidas: ${h} × ${w} mm</small>`;$('usarNoPdf').disabled=false;});
