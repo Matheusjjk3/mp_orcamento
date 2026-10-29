@@ -97,6 +97,26 @@ html,body{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 #printArea.pdf-export .proposal-title{font-size:15pt!important;}
 #printArea.pdf-export .document-footer strong{font-size:11pt!important;}
 
+
+/* Ajuste solicitado: separa R$ do valor total como no orçamento original. */
+@media print { .payment-row > .payment-total-cell {display:grid!important;grid-template-columns:27% 73%!important;align-items:center!important;padding:0!important;text-align:initial!important;} }
+#printArea.pdf-export .payment-row > .payment-total-cell{display:grid!important;grid-template-columns:27% 73%!important;align-items:center!important;padding:0!important;text-align:initial!important;}
+#printArea.pdf-export .payment-total-symbol,#printArea.pdf-export .payment-total-number{font-family:Arial,Helvetica,sans-serif!important;font-size:18pt!important;font-weight:700!important;line-height:1.12!important;white-space:nowrap!important;}
+#printArea.pdf-export .payment-total-symbol{padding-left:5mm!important;text-align:left!important;}
+#printArea.pdf-export .payment-total-number{text-align:right!important;padding-right:3mm!important;}
+@media print {
+ .payment-total-symbol,.payment-total-number{font-family:Arial,Helvetica,sans-serif!important;font-size:18pt!important;font-weight:700!important;white-space:nowrap!important;}
+ .payment-total-symbol{padding-left:5mm!important;text-align:left!important;}
+ .payment-total-number{text-align:right!important;padding-right:3mm!important;}
+}
+/* Folha A4: rodapé embaixo, respeitando a área útil e sem segunda página. */
+#printArea.pdf-export{display:flex!important;flex-direction:column!important;height:287mm!important;min-height:287mm!important;max-height:287mm!important;overflow:visible!important;}
+#printArea.pdf-export .document-footer{margin-top:auto!important;padding-top:2mm!important;flex-shrink:0!important;}
+@media print {
+ .printArea{display:flex!important;flex-direction:column!important;min-height:287mm!important;}
+ .printArea .document-footer{margin-top:auto!important;padding-top:2mm!important;}
+}
+
 </style></head><body>
 <div class="shell"><header class="top"><div class="brand"><div class="brandicon">MP</div><div><strong>MP Planejados</strong><small>Ferramentas internas</small></div></div><span class="priv">USO INTERNO</span></header>
 <main><div class="intro"><p class="eyebrow">ÁREA DE TRABALHO</p><h1>Orçamentos, sem complicação.</h1><p>Escolha uma ferramenta para começar.</p></div>
@@ -118,7 +138,7 @@ html,body{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
 <div class="description-head">Descrição do projeto</div><div class="description-text" id="docDescricao"></div>
 <div class="delivery-head">Tempo para execução do projeto <b id="docPrazo"></b></div><div class="delivery-note">A CONTAR APÓS DATA DO PAGAMENTO DA ENTRADA</div>
 <div class="payment-title">Valores e forma de pagamento</div><div class="payment-labels"><div>Descrição</div><div>Valores</div></div>
-<div class="payment-row"><div>Valor total do orçamento</div><div class="payment-price" id="docPrazoTotal"></div></div>
+<div class="payment-row"><div>Valor total do orçamento</div><div class="payment-total-cell"><span class="payment-total-symbol">R$</span><strong class="payment-total-number" id="docPrazoTotal"></strong></div></div>
 <div class="payment-row"><div>Ou parcelamos no cartão de crédito, sem juros em até:</div><div class="payment-split"><b>12x</b><strong id="docParcela"></strong></div></div>
 <div class="payment-row"><div>Ou se preferir temos um super desconto de 13.00% para pagamento em dinheiro ou transferência bancária.</div><div class="payment-split green"><b>À Vista</b><strong id="docAvista"></strong></div></div>
 <div class="payment-divider"></div><div class="payment-condition">Para pagamento <u>à vista</u> será cobrado 50% no ato da encomenda, e o restante na entrega do produto.</div><div class="payment-condition payment-condition-2">Para pagamento com cartões de crédito será cobrado o valor total no ato da encomenda.</div>
@@ -151,7 +171,7 @@ function fillProposal(q){
  $('docDescricao').textContent=$('descricao').value.trim();
  $('docPrazo').textContent=$('prazo').value+' dias úteis';
  $('docAvista').textContent=currency(q.cash);
- $('docPrazoTotal').textContent=currency(q.credit);
+ $('docPrazoTotal').textContent=currency(q.credit).replace(/^R\$\s*/, '');
  $('docParcela').textContent=currency(q.instalment);
 }
 function filenamePiece(s){return String(s).trim().replace(/[\\/:*?"<>|\x00-\x1f]/g,'').replace(/\s+/g,' ').replace(/[. ]+$/g,'').slice(0,80)||'Sem nome';}
