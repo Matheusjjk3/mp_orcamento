@@ -11,4 +11,8 @@ function updateQuote(){const cash=parseBRL($('avista').value);const valid=Number
 $('avista').addEventListener('input',updateQuote);
 function dateBR(d){return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});}
 $('formPdf').addEventListener('submit',event=>{event.preventDefault();const q=updateQuote();if(!q){alert('Preencha um valor à vista válido.');return;}const now=new Date();const until=new Date(now.getFullYear(),now.getMonth(),now.getDate()+7);$('docData').textContent=dateBR(now);$('docValidade').textContent=dateBR(until);$('docCliente').textContent=$('cliente').value.trim();$('docProjeto').textContent=$('projeto').value.trim();$('docDescricao').textContent=$('descricao').value.trim();$('docPrazo').textContent=$('prazo').value+' dias úteis';$('docAvista').textContent=currency(q.cash);$('docPrazoTotal').textContent=currency(q.credit);$('docParcela').textContent=currency(q.instalment);window.print();});
+// Ao preparar a impressão, reduz proporcionalmente a proposta para uma folha A4.
+function fitPrintA4(){const el=$("printArea");el.style.setProperty("--mp-print-zoom","1");const mmPx=96/25.4;const usableHeight=282*mmPx;const h=el.getBoundingClientRect().height;let scale=h>usableHeight? Math.max(0.45,usableHeight/h*0.95):1;el.style.setProperty("--mp-print-zoom",String(scale));}
+window.addEventListener("beforeprint",fitPrintA4);
+window.addEventListener("afterprint",()=>$("printArea").style.removeProperty("--mp-print-zoom"));
 updateQuote();
