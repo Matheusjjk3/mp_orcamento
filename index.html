@@ -109,6 +109,27 @@ html,body{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
  .payment-total-symbol{padding-left:5mm!important;text-align:left!important;}
  .payment-total-number{text-align:right!important;padding-right:3mm!important;}
 }
+/* Ajuste pontual dos preços: valores à direita na mesma margem do total. */
+#printArea.pdf-export .payment-row > .payment-total-cell .payment-total-symbol,
+#printArea.pdf-export .payment-row > .payment-total-cell .payment-total-number {
+  color:#454545!important;
+}
+#printArea.pdf-export .payment-row > .payment-split {
+  grid-template-columns:30% 70%!important;
+}
+#printArea.pdf-export .payment-row > .payment-split > strong {
+  justify-content:flex-end!important;
+  text-align:right!important;
+  padding-right:3mm!important;
+  border-right:0!important;
+  white-space:nowrap!important;
+}
+@media print {
+ .payment-row > .payment-total-cell .payment-total-symbol,
+ .payment-row > .payment-total-cell .payment-total-number {color:#454545!important;}
+ .payment-row > .payment-split {grid-template-columns:30% 70%!important;}
+ .payment-row > .payment-split > strong {justify-content:flex-end!important;text-align:right!important;padding-right:3mm!important;border-right:0!important;white-space:nowrap!important;}
+}
 /* Folha A4: rodapé embaixo, respeitando a área útil e sem segunda página. */
 #printArea.pdf-export{display:flex!important;flex-direction:column!important;height:287mm!important;min-height:287mm!important;max-height:287mm!important;overflow:visible!important;}
 #printArea.pdf-export .document-footer{margin-top:auto!important;padding-top:2mm!important;flex-shrink:0!important;}
